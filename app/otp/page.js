@@ -9,16 +9,20 @@ import Image from "next/image";
 function page() {
     const [otp, setOtp] = useState(['', '', '', '', '', '']);
 
-    const handleChange = (index, value) => {
-      if (!/^[0-9]*$/.test(value)) return;
-      const newOtp = [...otp];
-      newOtp[index] = value;
-      setOtp(newOtp);
-  
-      if (value && index < 5) {
-        document.getElementById(`otp-${index + 1}`).focus();
-      }
-    };
+ const handleChange = (index, value) => {
+   if (!/^[0-9]*$/.test(value)) return;
+   const newOtp = [...otp];
+   newOtp[index] = value;
+   setOtp(newOtp);
+
+   if (value && index < 5 && typeof document !== "undefined") {
+     const nextInput = document.getElementById(`otp-${index + 1}`);
+     if (nextInput) {
+       nextInput.focus();
+     }
+   }
+ };
+
   
     const handleVerify = () => {
       alert(`Verifying OTP: ${otp.join('')}`);
