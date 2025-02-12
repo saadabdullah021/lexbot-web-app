@@ -11,7 +11,7 @@ module.exports = {
           "linear-gradient(90deg, rgba(135, 17, 193, 0.3) 0%, rgba(36, 114, 252, 0.3) 100%)",
       },
       fontFamily: {
-        sans: ['"SF Pro Display"', "sans-serif"], // Add SF Pro Display as default sans
+        sans: ['"SF Pro Display"', "sans-serif"], 
       },
       keyframes: {
         wave: {
@@ -20,7 +20,7 @@ module.exports = {
         },
       },
       animation: {
-        wave: "wave 1s ease-in-out infinite", // Define wave animation
+        wave: "wave 1s ease-in-out infinite", 
       },
     },
   },
